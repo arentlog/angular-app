@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     forced: false,
     image: "https://yesno.wtf/assets/yes/1-af11222d8d4af90bdab8fc447c8cfebf.gif"
   };
+  
   chuckJoke: ChuckJoke = {
     id: 1,
     joke: "Chuck Norris .",
