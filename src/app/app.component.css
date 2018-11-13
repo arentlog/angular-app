@@ -1,3 +1,7 @@
 span:hover {
     color: gray;
 }
+
+a {
+    color: white;
+}
