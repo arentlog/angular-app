@@ -1,40 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Answer } from './answer';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ChuckJoke } from './chuck-joke';
 
-export interface Joke {
-  type: string;
-  value: ChuckJoke;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  private answerSubject$: BehaviorSubject<Answer> = new BehaviorSubject(<Answer>{});
-  private jokeSubject$: BehaviorSubject<Joke> = new BehaviorSubject(<Joke>{});
+  private answerSubject$: BehaviorSubject<string> = new BehaviorSubject(<string>'');
+  private jokeSubject$: BehaviorSubject<string> = new BehaviorSubject(<string>'');
 
   constructor(private http: HttpClient) { }
 
   getAnswer() {
-    this.http.get<Answer>('https://yesno.wtf/api').subscribe(data => {
-      this.answerSubject$.next(data);
+    this.http.get<any>('https://yesno.wtf/api').subscribe(data => {
+      this.answerSubject$.next(data.image);
     });
   }
 
   getChuckJoke() {
-    this.http.get<Joke>('http://api.icndb.com/jokes/random').subscribe(data => {
-      this.jokeSubject$.next(data);
+    this.http.get<any>('http://api.icndb.com/jokes/random').subscribe(data => {
+      this.jokeSubject$.next(data.value.joke);
     });
   }
 
-  answer$(): Observable<Answer> {
+  answer$(): Observable<string> {
     return this.answerSubject$.asObservable();
   }
 
-  chuckJoke$(): Observable<Joke> {
+  chuckJoke$(): Observable<string> {
     return this.jokeSubject$.asObservable();
   }
 }

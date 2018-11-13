@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Answer } from './shared/answer';
 import { AppService } from './shared/app.service';
-import { ChuckJoke } from './shared/chuck-joke';
 
 @Component({
   selector: 'app-root',
@@ -10,22 +8,13 @@ import { ChuckJoke } from './shared/chuck-joke';
 })
 export class AppComponent implements OnInit {
 
-  answer: Answer = {
-    answer: "yes",
-    forced: false,
-    image: "../assets/loading_icon.gif"
-  };
-  
-  chuckJoke: ChuckJoke = {
-    id: 1,
-    joke: "Chuck Norris.",
-    categories: []
-  };
+  answer: string = '../assets/loading_icon.gif';
+  chuckJoke: string = 'Chuck Norris.';
 
   constructor(private appService: AppService) { }
 
   askQuestion() {
-    this.answer.image = '../assets/loading_icon.gif';
+    this.answer = '../assets/loading_icon.gif';
 
     this.appService.getAnswer();
     this.appService.answer$().subscribe(data => {
@@ -34,11 +23,11 @@ export class AppComponent implements OnInit {
   }
 
   showChuckJoke() {
-    this.chuckJoke.joke = 'Loading...';
+    this.chuckJoke = 'Loading...';
 
     this.appService.getChuckJoke();
     this.appService.chuckJoke$().subscribe(data => {
-      this.chuckJoke = data.value;
+      this.chuckJoke = data;
     });
   }
 
