@@ -1,0 +1,11 @@
+<select>
+  <option>Attack</option>
+  <option>Defense</option>
+</select>
+<br>
+
+<span *ngFor="let type of types">
+  <mat-checkbox type="checkbox" [value]="type" (change)="onCheckboxChange($event, type)">{{type.typeName}}</mat-checkbox><br>
+</span>
+
+<p>Super Effective: <span *ngFor="let i of seList" [ngStyle]="{'color' : i.typeColor}">{{i.typeName}}, </span></p>

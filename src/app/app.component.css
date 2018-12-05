@@ -4,4 +4,19 @@ span:hover {
 
 a {
     color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+}
+
+.toolbar {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content {
+    margin: 10px;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './shared/app.service';
+import { Router, Event, RoutesRecognized } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,28 +9,7 @@ import { AppService } from './shared/app.service';
 })
 export class AppComponent implements OnInit {
 
-  answer: string = '../assets/loading_icon.gif';
-  chuckJoke: string = 'Chuck Norris.';
-
-  constructor(private appService: AppService) { }
-
-  askQuestion() {
-    this.answer = '../assets/loading_icon.gif';
-
-    this.appService.getAnswer();
-    this.appService.answer$().subscribe(data => {
-      this.answer = data;
-    });
-  }
-
-  showChuckJoke() {
-    this.chuckJoke = 'Loading...';
-
-    this.appService.getChuckJoke();
-    this.appService.chuckJoke$().subscribe(data => {
-      this.chuckJoke = data;
-    });
-  }
+  constructor() { }
 
   ngOnInit() {
   }

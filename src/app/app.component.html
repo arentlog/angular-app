@@ -1,25 +1,26 @@
-<div style="text-align:center">
-  <h1>
-    <span (click)="askQuestion()" style="cursor: pointer">Ask a yes/no question!</span>
-  </h1>
-  <img width="300" src="{{answer}}">
-</div>
-<div style="text-align:center">
-  <h1>
-    <button mat-stroked-button (click)="showChuckJoke()" style="cursor: pointer">Get a Chuck Norris joke</button>
-  </h1>
-  <p>"{{chuckJoke}}"</p>
-</div>
+<mat-toolbar class="toolbar">
+  <a routerLink="home">Logan</a>
+  <a routerLink="pokemon">Pokemon</a>
+  <a routerLink="trivia">Trivia</a>
+  <a routerLink="chuck-joke">Chuck Joke</a>
+</mat-toolbar>
 
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="main-content">
+  <!-- <div style="text-align:center">
+    <h1>
+      <span (click)="askQuestion()" style="cursor: pointer">Ask a yes/no question!</span>
+    </h1>
+    <img width="300" src="{{(answer != null) ? answer : '../assets/loading_icon.gif'}}">
+  </div>
+  <div style="text-align:center">
+    <h1>
+      <button mat-stroked-button (click)="showChuckJoke()" style="cursor: pointer">Get a Chuck Norris joke</button>
+    </h1>
+    <p>"{{chuckJoke}}"</p>
+  </div>
+
+  <app-pokemon></app-pokemon>
+
+  <app-trivia></app-trivia> -->
+  <router-outlet></router-outlet>
+</div>
