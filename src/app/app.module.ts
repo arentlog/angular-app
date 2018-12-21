@@ -39,11 +39,11 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { TriviaComponent } from './modules/home/components/trivia/trivia.component';
-import { PokemonComponent } from './modules/home/components/pokemon/pokemon.component';
+import { TriviaComponent } from './components/trivia/trivia.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/home/components/home/home.component';
-import { ChuckJokeComponent } from './modules/home/components/chuck-joke/chuck-joke.component';
+import { HomeComponent } from './components/home/home.component';
+import { ChuckJokeComponent } from './components/chuck-joke/chuck-joke.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
