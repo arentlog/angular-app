@@ -9,6 +9,7 @@ import { HomeService } from '../shared/home.service';
 export class HomeComponent implements OnInit {
 
   answer: string = '../assets/loading_icon.gif';
+  oldData: string = '';
 
   constructor(private homeService: HomeService) { }
 
@@ -19,8 +20,9 @@ export class HomeComponent implements OnInit {
     this.answer = '../assets/loading_icon.gif';
 
     this.homeService.getAnswer().subscribe(data => {
-      if (data) {
+      if (data !== this.oldData) {
         this.answer = data;
+        this.oldData = data;
       }
     });
   }
