@@ -16,7 +16,6 @@ export class PokemonComponent implements OnInit {
     this.pokemonService.pokemon$().subscribe(data => {
       if (data) {
         this.pokemon = data;
-        console.log(this.pokemon);
       }
     });
   }

@@ -1,0 +1,29 @@
+.pokemon-detail {
+  text-align: center;
+}
+
+.pokemon-image {
+  background-color: black;
+  border: thin solid red;
+  width: 100px;
+  margin: auto;
+}
+
+.pokemon-image:hover {
+  border: thin solid yellow;
+  cursor: pointer;
+}
+
+.detail-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details {
+  text-align: left;
+}
+
+.details li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

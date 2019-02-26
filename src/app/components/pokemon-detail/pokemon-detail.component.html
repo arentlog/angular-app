@@ -1,3 +1,33 @@
-<div *ngIf="pokemonDetails">
-  {{pokemonDetails.name}}
+<div class="pokemon-detail" *ngIf="pokemonDetails">
+  <h2>{{pokemonDetails.name | titlecase}} #{{pokemonDetails.id | number: '3.0-0'}}</h2>
+  <div class="pokemon-image" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + pokemonDetails.name + '_(Pokémon)')">
+    <img [src]="pokemonDetails.sprites.front_default">
+  </div>
+
+  <div class="detail-flex">
+    <div class="details">
+      <p>Type: <span *ngFor="let t of pokemonDetails.types">{{t.type.name}}</span></p>
+      <p>Height: {{pokemonDetails.height}}</p>
+      <p>Weight: {{pokemonDetails.weight}}</p>
+    </div>
+
+    <div class="details">
+      <p>Abilities</p>
+      <ul>
+        <li *ngFor="let a of pokemonDetails.abilities" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + a.ability.name + '_(Ability)')">
+          {{a.ability.name}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="details">
+      <p>Moves</p>
+      <ul>
+        <li *ngFor="let a of pokemonDetails.moves" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + a.move.name + '_(move)')">
+          {{a.move.name}}
+        </li>
+      </ul>
+    </div>
+
+  </div>
 </div>

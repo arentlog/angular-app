@@ -1,6 +1,6 @@
 <div class="pokemon-flex">
   <div class="pokemon" *ngFor="let p of pokemon" [routerLink]="['/pokemon', p.id]">
     <img [src]="p.image">
-    <p>{{p.name}}</p>
+    <p>{{p.name | titlecase}} #{{p.id | number: '3.0-0'}}</p>
   </div>
 </div>

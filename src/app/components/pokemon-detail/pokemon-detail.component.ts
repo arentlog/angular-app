@@ -15,6 +15,7 @@ export class PokemonDetailComponent implements OnInit {
       if (params['pokemon']) {
         this.pokemonService.getPokemonDetails(params['pokemon']).subscribe(data => {
           this.pokemonDetails = data;
+          console.log(this.pokemonDetails);
         });
       }
     });
@@ -23,4 +24,7 @@ export class PokemonDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  openNewTab(url: string) {
+    window.open(url, '_blank');
+  }
 }
