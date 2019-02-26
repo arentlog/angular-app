@@ -44,12 +44,16 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ChuckJokeComponent } from './components/chuck-joke/chuck-joke.component';
+import { GameComponent } from './components/game/game.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pokemon', component: PokemonComponent },
+  { path: 'pokemon/:pokemon', component: PokemonDetailComponent },
   { path: 'trivia', component: TriviaComponent },
   { path: 'chuck-joke', component: ChuckJokeComponent },
+  { path: 'game', component: GameComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -59,7 +63,9 @@ const appRoutes: Routes = [
     TriviaComponent,
     PokemonComponent,
     HomeComponent,
-    ChuckJokeComponent
+    ChuckJokeComponent,
+    GameComponent,
+    PokemonDetailComponent
   ],
   imports: [
     RouterModule.forRoot(

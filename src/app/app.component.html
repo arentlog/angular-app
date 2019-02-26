@@ -1,26 +1,11 @@
 <mat-toolbar class="toolbar">
-  <a routerLink="home">Logan</a>
-  <a routerLink="pokemon">Pokemon</a>
-  <a routerLink="trivia">Trivia</a>
-  <a routerLink="chuck-joke">Chuck Joke</a>
+  <a routerLinkActive="main-route-active" routerLink="home">Logan</a>
+  <a routerLinkActive="main-route-active" routerLink="pokemon">Pokemon</a>
+  <a routerLinkActive="main-route-active" routerLink="trivia">Trivia</a>
+  <a routerLinkActive="main-route-active" routerLink="chuck-joke">Chuck Joke</a>
+  <a routerLinkActive="main-route-active" routerLink="game">Game</a>
 </mat-toolbar>
 
 <div class="main-content">
-  <!-- <div style="text-align:center">
-    <h1>
-      <span (click)="askQuestion()" style="cursor: pointer">Ask a yes/no question!</span>
-    </h1>
-    <img width="300" src="{{(answer != null) ? answer : '../assets/loading_icon.gif'}}">
-  </div>
-  <div style="text-align:center">
-    <h1>
-      <button mat-stroked-button (click)="showChuckJoke()" style="cursor: pointer">Get a Chuck Norris joke</button>
-    </h1>
-    <p>"{{chuckJoke}}"</p>
-  </div>
-
-  <app-pokemon></app-pokemon>
-
-  <app-trivia></app-trivia> -->
   <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,17 @@
+.pokemon-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  background-color: black;
+  border: thin solid red;
+  margin: 5px;
+  text-align: center;
+  width: 140px;
+}
+
+.pokemon:hover {
+  border: thin solid yellow;
+  cursor: pointer;
+}

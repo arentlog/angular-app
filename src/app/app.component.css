@@ -1,22 +1,27 @@
 span:hover {
-    color: gray;
+  color: gray;
 }
 
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 a:hover {
-    color: gray;
+  color: gray;
 }
 
 .toolbar {
-    background: black;
-    display: flex;
-    justify-content: space-between;
+  background: black;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-content {
-    margin: 10px;
+  margin: 10px;
+}
+
+.main-route-active {
+  color: aqua!important;
+  font-weight: bold;
 }
