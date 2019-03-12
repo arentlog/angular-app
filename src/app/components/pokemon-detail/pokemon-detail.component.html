@@ -6,13 +6,14 @@
 
   <div class="detail-flex">
     <div class="details">
-      <p>Type: <span *ngFor="let t of pokemonDetails.types">{{t.type.name}}</span></p>
+      <b>Info</b>
+      <p>Type: <span *ngFor="let t of pokemonDetails.types" [ngClass]="'type ' + t.type.name" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + t.type.name + '_(type)')">{{t.type.name}} </span></p>
       <p>Height: {{pokemonDetails.height}}</p>
       <p>Weight: {{pokemonDetails.weight}}</p>
     </div>
 
     <div class="details">
-      <p>Abilities</p>
+      <b>Abilities</b>
       <ul>
         <li *ngFor="let a of pokemonDetails.abilities" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + a.ability.name + '_(Ability)')">
           {{a.ability.name}}
@@ -21,7 +22,7 @@
     </div>
 
     <div class="details">
-      <p>Moves</p>
+      <b>Moves</b>
       <ul>
         <li *ngFor="let a of pokemonDetails.moves" (click)="openNewTab('https://bulbapedia.bulbagarden.net/wiki/' + a.move.name + '_(move)')">
           {{a.move.name}}
